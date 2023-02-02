@@ -8,7 +8,6 @@
 <div class="pull-right">
         <a class="btn btn-primary" href="{{ route('siswas.index') }}"> Back</a>
     </div>
-    </div>
 </div>
 @if ($errors->any())
 <div class="alert alert-danger">
