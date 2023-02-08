@@ -1,4 +1,15 @@
 <?php
+
+//ini adalah controller student
+use App\Http\Controllers\StudentController;
+//ini adalah controller studentGroup
+use App\Http\Controllers\StudentGroupController;
+//ini adalah controller publisher
+use App\Http\Controllers\PublisherController;
+//ini adalah controller book
+use App\Http\Controllers\BookController;
+//ini adalah controller borrowing
+use App\Http\Controllers\BorrowingController;
 //ini adalah controller register
 use App\Http\Controllers\RegisterController;
 //ini adalah controller login
@@ -64,3 +75,12 @@ Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('acti
 //REGISTER
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('register/action', [RegisterController::class, 'actionregister'])->name('actionregister');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::resource('students', StudentController::class);
+Route::resource('studentGroups', StudentGroupController::class);
+Route::resource('publishers', PublisherController::class);
+Route::resource('books', BookController::class);
+Route::resource('borrowings', BorrowingController::class);
